@@ -1,0 +1,10 @@
+import cv2
+source= input("Enter the path of the source image: ")
+destination = input("Enter the name ")
+scale=int(input("Enter the scale"))
+img = cv2.imread(source, cv2.IMREAD_UNCHANGED)
+wscale = int(img.shape[1] * scale/100)
+hscale = int(img.shape[0] * scale/100)
+new_img = cv2.resize(img,(wscale,hscale))
+cv2.imwrite(destination,new_img)
+cv2.waitKey(0)
